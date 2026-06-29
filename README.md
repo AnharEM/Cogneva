@@ -155,4 +155,16 @@ It is intended to explore modern conversational AI techniques such as Retrieval-
 
 # License
 
-MIT License
+This project is licensed under the MIT License.
+
+---
+
+## 👨‍💻 Author
+
+**Anhar Eswaramangalam**
+
+AI & Machine Learning Enthusiast
+
+GitHub: https://github.com/AnharEM
+
+LinkedIn: https://linkedin.com/in/anhareswaramangalam
