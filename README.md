@@ -1,6 +1,6 @@
 # 🧠 Cogneva
 
-> An AI Therapist platform that combines Retrieval-Augmented Generation (RAG), semantic long-term memory, and clinical knowledge retrieval to deliver context-aware mental wellness conversations.
+> **An AI Therapist powered by Retrieval-Augmented Generation (RAG), semantic long-term memory, and evidence-informed psychological knowledge to deliver personalized mental wellness conversations in English and natural Manglish.**
 
 ![Python](https://img.shields.io/badge/Python-3.10+-blue?logo=python)
 ![FastAPI](https://img.shields.io/badge/FastAPI-009688?logo=fastapi)
@@ -8,162 +8,190 @@
 ![Docker](https://img.shields.io/badge/Docker-2496ED?logo=docker)
 ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-336791?logo=postgresql)
 ![pgvector](https://img.shields.io/badge/pgvector-Vector_Search-blue)
-![Gemini](https://img.shields.io/badge/LLM-Google_Gemini-4285F4)
+![Google Gemini](https://img.shields.io/badge/LLM-Google_Gemini-4285F4)
+![MIT License](https://img.shields.io/badge/License-MIT-yellow)
 
 ---
 
-## Application Preview
+# Application Preview
 
-### Login
+## Login
 
 ![Login](assets/login.png)
 
 ---
 
-### Signup
+## Signup
 
 ![Signup](assets/signup.png)
 
 ---
 
-### Default Dashboard
+## Dashboard
 
 ![Dashboard](assets/dashboard.png)
 
 ---
 
-### Chat Window
+## Therapy Session
 
 ![Chat](assets/chat.png)
 
 ---
 
-# About
+# 📖 Overview
 
-Cogneva is an AI Therapist platform designed to simulate thoughtful, context-aware psychological conversations through modern AI engineering techniques.
+Cogneva is an AI Therapist platform designed to provide thoughtful, empathetic, and context-aware mental wellness conversations through modern AI engineering.
 
-Unlike traditional AI chatbots that depend only on the current conversation, Cogneva combines long-term semantic memory, Retrieval-Augmented Generation (RAG), and a curated psychology knowledge base to maintain continuity across conversations while grounding responses in relevant therapeutic concepts.
+Unlike conventional AI chatbots that rely only on the active conversation, Cogneva combines semantic long-term memory, Retrieval-Augmented Generation (RAG), and a curated psychological knowledge base to maintain conversational continuity while grounding responses in relevant therapeutic concepts.
 
-The platform follows a fully decoupled architecture consisting of a SvelteKit frontend, a FastAPI backend, PostgreSQL with pgvector for semantic retrieval, and Google Gemini orchestrated through Agno.
+The system is capable of conversing naturally in **English** as well as **Manglish (Malayalam-English)**, enabling a more familiar and comfortable experience for bilingual users.
+
+Built with a fully decoupled architecture, Cogneva separates the frontend, backend, authentication, and clinical memory into independent components, making the platform scalable, modular, and easier to maintain.
 
 ---
 
-# Core Capabilities
+# ✨ Highlights
 
 ### 🧠 AI Therapist
 
-* Context-aware therapeutic conversations
-* Persona-driven psychologist agent
-* Long-term conversational memory
-* Psychological knowledge retrieval
-* Semantic reasoning across previous sessions
+* Empathetic psychologist persona
+* Natural conversations in English & Manglish
+* Context-aware therapeutic responses
+* Long-term semantic memory
+* Evidence-informed psychological guidance
 
-### 📚 Clinical Knowledge Engine
+### 📚 Retrieval-Augmented Generation (RAG)
 
-Cogneva maintains a curated library of psychology resources that are indexed using vector embeddings.
+Rather than relying solely on the language model, Cogneva maintains a curated psychology library indexed using vector embeddings.
 
-When a conversation requires evidence-based techniques, relevant psychological concepts are retrieved through semantic similarity search and injected into the model's reasoning process using Retrieval-Augmented Generation (RAG).
+Whenever a conversation requires therapeutic techniques, CBT principles, or psychological concepts, the system retrieves the most relevant knowledge using semantic similarity search and injects it into the model before generating a response.
 
-### 🧩 Memory System
+This helps produce responses that remain grounded in relevant psychological knowledge instead of relying only on the LLM's internal knowledge.
 
-Rather than storing only chat history, Cogneva maintains semantic memories across multiple conversations.
+### 🧩 Semantic Memory
 
-Relevant memories are dynamically retrieved whenever they improve the quality or continuity of future responses.
+Cogneva does more than remember chat history.
 
-### 🔐 Secure User Experience
+The application stores meaningful semantic memories from previous conversations and retrieves only the memories that are relevant to the user's current situation.
+
+This allows conversations to remain coherent across multiple sessions without overwhelming the model with unnecessary context.
+
+### 🔐 Privacy First
 
 * Secure authentication
+* Password hashing using bcrypt
 * Multiple therapy sessions
-* Rename and organize sessions
-* Delete sessions
-* Light & Dark mode
-* Privacy-first account deletion
+* Rename or delete sessions
+* Permanent account deletion
+* Cascading removal of associated conversations and memories
 
 ---
 
-# Architecture
+# 🏗️ Architecture
 
-```
-User
-   │
-   ▼
-SvelteKit Frontend
-   │
-Authentication
-   │
-   ▼
-FastAPI Backend
-   │
-───────────────
-│             │
-▼             ▼
-Long-term    Clinical
-Memory       Knowledge Base
-(PostgreSQL) (pgvector)
-│             │
-└──────┬──────┘
-       ▼
-    Agno Agent
-       │
- Google Gemini
-       │
-       ▼
-Therapeutic Response
+```text
+                    User
+                      │
+                      ▼
+             SvelteKit Frontend
+                      │
+          Authentication & Sessions
+                      │
+                      ▼
+               FastAPI Backend
+                      │
+        ┌─────────────┴─────────────┐
+        ▼                           ▼
+ Semantic Memory             Clinical Knowledge
+  (PostgreSQL)                  (pgvector)
+        │                           │
+        └─────────────┬─────────────┘
+                      ▼
+                 Agno Agent
+                      │
+               Google Gemini
+                      │
+                      ▼
+            Therapeutic Response
 ```
 
 ---
 
-# Technology Stack
+# ⚙️ Technology Stack
 
-| Layer            | Technology      |
-| ---------------- | --------------- |
-| Frontend         | SvelteKit       |
-| Backend          | FastAPI         |
-| AI Agent         | Agno            |
-| LLM              | Google Gemini   |
-| Database         | PostgreSQL      |
-| Vector Database  | pgvector        |
-| ORM              | SQLModel        |
-| Authentication   | SQLite + bcrypt |
-| Containerization | Docker          |
-
----
-
-# Key Features
-
-* AI Therapist interface
-* Retrieval-Augmented Generation (RAG)
-* Cross-session semantic memory
-* Clinical knowledge retrieval
-* Secure authentication
-* Dockerized deployment
-* Responsive interface
-* Light & Dark mode
-* Multiple therapy sessions
-* Session management
-* Privacy-focused architecture
+| Layer                | Technology      |
+| -------------------- | --------------- |
+| Frontend             | SvelteKit       |
+| Backend              | FastAPI         |
+| AI Agent Framework   | Agno            |
+| Large Language Model | Google Gemini   |
+| Database             | PostgreSQL      |
+| Vector Database      | pgvector        |
+| ORM                  | SQLModel        |
+| Authentication       | SQLite + bcrypt |
+| Embeddings           | Nomic Embed     |
+| Containerization     | Docker          |
 
 ---
 
-# Disclaimer
+# 🚀 Key Features
 
-Cogneva is an AI-powered conversational application created for educational and research purposes.
-
-It is intended to explore modern conversational AI techniques such as Retrieval-Augmented Generation, semantic memory, and long-term context management. It is not a substitute for licensed mental health professionals, clinical diagnosis, or emergency services.
+* 🧠 AI Therapist with a consistent psychologist persona
+* 🌐 Bilingual conversations (English & Manglish)
+* 📚 Retrieval-Augmented Generation (RAG)
+* 🧩 Cross-session semantic memory
+* 📖 Psychology knowledge retrieval
+* 🔐 Secure authentication & account management
+* 💬 Multiple therapy conversations
+* 📝 Rename & delete conversations
+* 🌙 Light & Dark themes
+* 🐳 Dockerized deployment
+* 🏗️ Decoupled frontend & backend architecture
 
 ---
 
-# License
+# 📂 Project Structure
+
+```text
+Cogneva/
+│
+├── books/                  # Psychology knowledge base
+├── frontend/               # SvelteKit frontend
+├── agent.py                # AI agent orchestration
+├── database.py             # Database configuration
+├── ingestion_library.py    # Clinical knowledge ingestion
+├── main.py                 # FastAPI entry point
+├── models.py               # SQLModel database models
+├── prompts.txt             # Therapist prompt engineering
+├── qa_test.py              # Backend testing
+├── docker-compose.yml
+├── Dockerfile
+├── requirements.txt
+└── README.md
+```
+
+---
+
+# 🔒 Disclaimer
+
+Cogneva is an educational and research project that demonstrates modern AI engineering techniques including Retrieval-Augmented Generation (RAG), semantic memory, prompt engineering, and conversational AI.
+
+It is **not** a replacement for licensed psychologists, psychiatrists, crisis intervention services, or professional medical advice. Users experiencing a mental health emergency should seek immediate assistance from qualified professionals or local emergency services.
+
+---
+
+# 📄 License
 
 This project is licensed under the MIT License.
 
 ---
 
-## 👨‍💻 Author
+# 👨‍💻 Author
 
 **Anhar Eswaramangalam**
 
-AI & Machine Learning Enthusiast
+AI & Machine Learning Engineer
 
 GitHub: https://github.com/AnharEM
 
