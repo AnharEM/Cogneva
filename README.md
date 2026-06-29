@@ -14,7 +14,27 @@
 
 ## Application Preview
 
-![Cogneva](assets/chat.png)
+### Login
+
+![Login](assets/login.png)
+
+---
+
+### Signup
+
+![Signup](assets/signup.png)
+
+---
+
+### Default Dashboard
+
+![Dashboard](assets/dashboard.png)
+
+---
+
+### Chat Window
+
+![Chat](assets/chat.png)
 
 ---
 
