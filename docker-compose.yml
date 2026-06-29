@@ -1,0 +1,24 @@
+version: '3.8'
+
+services:
+  db-pgsql:
+    image: pgvector/pgvector:pg16
+    container_name: psych-db
+    restart: always
+    environment:
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: securepassword
+      POSTGRES_DB: psychologist_db
+    ports:
+      - "5433:5432"
+    volumes:
+      - pg_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U admin -d psychologist_db"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  pg_data:
+    name: psych_pg_data
